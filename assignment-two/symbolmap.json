@@ -2,24 +2,25 @@
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "width": 800,
   "height": 450,
-  "title": "Top 100 golf courses in Australia",
-  "projection": {"type": "equalEarth"},
+  "title": "Top 100 Golf Courses in Australia",
+  "projection": {"type": "equirectangular"},
   "layer": [
     {
       "data": {
         "url":
-        "https://github.com/BCohen7/assignment-two/blob/main/assignment-two/js/STE_2021_AUST_GDA2020.topojson",
-        "format": {"type": "topojson", "feature": "STE_2021_AUST_GDA2020"}
+        "https://raw.githubusercontent.com/BCohen7/assignment/main/assignment-two/js/STE_2021_AUST_GDA94.topojson",
+        "format": {"type": "topojson", "feature": "STE_2021_AUST_GDA94"}
       },
-      "mark": {"type": "geoshape", "fill": "lightgray", "stroke": "white"}
+      "mark": {"type": "geoshape", "fill": "lightgreen", "stroke": "white"}
     },
     {  
     "data": {
-      "url": "https://github.com/BCohen7/assignment-two/blob/main/assignment-two/data/courses.csv"},
+      "url": "https://raw.githubusercontent.com/BCohen7/assignment/main/assignment-two/data/courses.csv"},
     "mark": {"type": "circle", "opacity": 0.8, "size": 1},
     "encoding": {
-      "longitude": {"field": "longitude", "type": "quantitative"},
-      "latitude": {"field": "latitude", "type": "quantitative"}
+      "longitude": {"field": "Longitude", "type": "quantitative"},
+      "latitude": {"field": "Latitude", "type": "quantitative"},
+      "size": {"value": 10}
     }
   }
   ]
