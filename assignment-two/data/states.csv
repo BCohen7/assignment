@@ -1,9 +1,33 @@
-﻿States,Top 100,Top 50,Top 25,Top 10
-Victoria,36,22,14,5
-Tasmania,5,4,4,3
-New South Wales,23,11,3,1
-Australian Capital Territory,2,1,0,0
-Queensland,17,5,0,0
-South Australia,7,4,2,1
-Western Australia,10,3,2,0
-Northern Territory,0,0,0,0
+﻿States,Out of,Top XX
+Victoria,100,36
+Tasmania,100,5
+New South Wales,100,23
+Australian Capital Territory,100,2
+Queensland,100,17
+South Australia,100,7
+Western Australia,100,10
+Northern Territory,100,0
+Victoria,50,22
+Tasmania,50,4
+New South Wales,50,11
+Australian Capital Territory,50,1
+Queensland,50,5
+South Australia,50,4
+Western Australia,50,3
+Northern Territory,50,0
+Victoria,25,14
+Tasmania,25,4
+New South Wales,25,3
+Australian Capital Territory,25,0
+Queensland,25,0
+South Australia,25,2
+Western Australia,25,2
+Northern Territory,25,0
+Victoria,10,5
+Tasmania,10,3
+New South Wales,10,1
+Australian Capital Territory,10,0
+Queensland,10,0
+South Australia,10,1
+Western Australia,10,0
+Northern Territory,10,0
