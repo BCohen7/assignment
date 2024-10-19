@@ -2,7 +2,6 @@
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "width": 800,
   "height": 450,
-  "title": "Top 100 Golf Courses in Australia",
   "params":[
     {
       "name": "State_Select",
@@ -33,7 +32,7 @@
     },
     {
       "name": "X_Select",
-      "value": [0],
+      "value": 100,
       "bind": {
         "input": "select",
         "options": [
@@ -69,31 +68,38 @@
       }
     },
     {"data": {
-      "url": "https://raw.githubusercontent.com/BCohen7/assignment/main/assignment-two/js/STE_2021_AUST_GDA94.topojson",
-      "format": {"type": "topojson", "feature": "STE_2021_AUST_GDA94"}
+      "url": "https://raw.githubusercontent.com/BCohen7/assignment/main/assignment-two/data/stateslong.csv"
     },
       "transform": [
         {
-          "lookup": "properties.STE_NAME21",
+          "lookup": "States",
           "from": {
             "data": {
-              "url": "https://raw.githubusercontent.com/BCohen7/assignment/main/assignment-two/data/stateslong.csv"
+              "url": "https://raw.githubusercontent.com/BCohen7/assignment/main/assignment-two/js/STE_2021_AUST_GDA94.topojson",
+              "format": {"type": "topojson", "feature": "STE_2021_AUST_GDA94"}
             },
-            "key": "States",
-            "fields": ["Top 100", "Top 50", "Top 25", "Top 10"]
-        }
+            "key": "properties.STE_NAME21"
+        },
+        "as": "geo"
+      },
+      {
+        "filter": "datum.TopX == X_Select"
+      },
+      {
+        "calculate": "'Courses in the top' + datum.TopX[0]","as": "coursetip"
       }
       ],
       "mark": {"type": "geoshape", "stroke": "white"},
       "encoding": {
+        "shape": {"field": "geo", "type": "geojson"},
         "color": {
-          "field": "Top 10",
+          "field": "Amount",
           "type": "quantitative",
-          "scale": {"type": "linear", "domainMin": 0, "domainMid":2, "scheme": "greens"}
+          "scale": {"type": "linear", "domainMin": 0, "scheme": "greens"}
         },
         "tooltip": [
-          {"field": "properties.STE_NAME21", "type": "nominal", "title": "State"},
-          {"field": "Top 10", "type": "quantitative"}
+          {"field": "States", "type": "nominal", "title": "State"},
+          {"field": "Amount", "type": "quantitative", "title": "Amount"}
         ]
       }
     },
@@ -105,7 +111,7 @@
         "filter": "State_Select == null || datum.State == State_Select" 
       },
       {
-        "filter": {"field": "Rank", "lt": "Top_xx"}
+        "filter": "datum.Rank < X_Select + 1"
       }
     ],
     "mark": {"type": "circle", "opacity": 0.5, "size": 1},

@@ -1,0 +1,15 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "data": {
+        "url": "https://raw.githubusercontent.com/BCohen7/assignment/main/assignment-two/data/stateslong.csv"},
+        "transform": [
+            {
+                "filter": "datum.TopX == 100"
+            }
+        ],
+        "mark": "bar",
+        "encoding": {
+            "x": {"field": "Amount", "type": "quantitative"},
+            "y": {"field": "States", "type": "nominal","sort": "-x"}
+        }
+}
