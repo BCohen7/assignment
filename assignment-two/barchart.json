@@ -1,15 +1,24 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "height": 400,
+    "width": "container",
     "data": {
         "url": "https://raw.githubusercontent.com/BCohen7/assignment/main/assignment-two/data/stateslong.csv"},
-        "transform": [
+    "transform": [
             {
                 "filter": "datum.TopX == 100"
             }
         ],
-        "mark": "bar",
-        "encoding": {
-            "x": {"field": "Amount", "type": "quantitative"},
-            "y": {"field": "States", "type": "nominal","sort": "-x"}
+    "mark": "bar",
+
+    "encoding": {
+        "x": {"field": "Amount", "type": "quantitative", "title": null, "axis": {"labels": false, "grid": false, "tickOpacity": 0, "domain": false}},
+        "y": {"field": "States", "type": "nominal","sort": "-x", "title": null, "axis": {"labels": false, "tickOpacity": 0, "domain": false}},
+        "color": {
+            "field": "Origin", "type": "nominal",
+            "scale": {"range": ["#107937"]},
+            "legend": null
         }
+    },
+    "config": {"background": "#ccecb5", "view": {"stroke": "transparent"}}    
 }

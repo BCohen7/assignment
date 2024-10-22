@@ -1,0 +1,27 @@
+html,
+
+body {
+    background-color: #ccecb5;
+    padding-left: 50px;
+    padding-right: 50px
+}
+
+.titlebar {
+    font-weight: bold;
+    font-size: 20;
+    height: 100px
+}
+
+.pure-g {
+    margin-bottom: 100px;
+    padding-bottom: 0%;
+}
+
+#vis1 {
+    height: 100%;
+}
+
+.headingtest {
+    width: 100%;
+    background-color: #ccecb5;
+}

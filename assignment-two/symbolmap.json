@@ -1,7 +1,8 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "width": 800,
-  "height": 450,
+  "height": 400,
+  "width": "container",
+  "background": "#ccecb5",
   "params":[
     {
       "name": "State_Select",
@@ -53,29 +54,33 @@
       }
     }
   ],
+  "config": {"view": {"stroke": "transparent"}},
   "projection": {"type": "equirectangular"},
   "layer": [
     {
       "data": {
         "url":
-        "https://raw.githubusercontent.com/BCohen7/assignment/main/assignment-two/js/STE_2021_AUST_GDA94.topojson",
+        "https://raw.githubusercontent.com/BCohen7/assignment/main/assignment-two/js/MapOfAustralia.topojson",
         "format": {"type": "topojson", "feature": "STE_2021_AUST_GDA94"}
       },
       "mark": {
         "type": "geoshape",
-        "fill": "#ccecb5",
-        "stroke": "white"
+        "fill": "#c0e6ba"
       }
     },
     {"data": {
       "url": "https://raw.githubusercontent.com/BCohen7/assignment/main/assignment-two/data/stateslong.csv"
     },
+    "params":[{
+      "name": "ClickState",
+      "select": "point"
+    }],
       "transform": [
         {
           "lookup": "States",
           "from": {
             "data": {
-              "url": "https://raw.githubusercontent.com/BCohen7/assignment/main/assignment-two/js/STE_2021_AUST_GDA94.topojson",
+              "url": "https://raw.githubusercontent.com/BCohen7/assignment/main/assignment-two/js/MapOfAustralia.topojson",
               "format": {"type": "topojson", "feature": "STE_2021_AUST_GDA94"}
             },
             "key": "properties.STE_NAME21"
@@ -89,13 +94,14 @@
         "calculate": "'Courses in the top' + datum.TopX[0]","as": "coursetip"
       }
       ],
-      "mark": {"type": "geoshape", "stroke": "white"},
+      "mark": {"type": "geoshape","stroke": "#ccecb5","strokeWidth": 0.5},
       "encoding": {
         "shape": {"field": "geo", "type": "geojson"},
         "color": {
           "field": "Amount",
           "type": "quantitative",
-          "scale": {"type": "linear", "domainMin": 0, "scheme": "greens"}
+          "scale": {"type": "linear", "domainMin": 0, "scheme": "greens"},
+          "legend": null
         },
         "tooltip": [
           {"field": "States", "type": "nominal", "title": "State"},
