@@ -1,9 +1,9 @@
-﻿States,Top 100,Top 50,Top 25,Top 10
-Victoria,36,22,14,5
-Tasmania,5,4,4,3
-New South Wales,23,11,3,1
-Australian Capital Territory,2,1,0,0
-Queensland,17,5,0,0
-South Australia,7,4,2,1
-Western Australia,10,3,2,0
-Northern Territory,0,0,0,0
+﻿States,Shorthand,Top 100,Top 50,Top 25,Top 10
+Victoria,VIC,36,22,14,5
+Tasmania,TAS,5,4,4,3
+New South Wales,NSW,23,11,3,1
+Australian Capital Territory,ACT,2,1,0,0
+Queensland,QLD,17,5,0,0
+South Australia,SA,7,4,2,1
+Western Australia,WA,10,3,2,0
+Northern Territory,NT,0,0,0,0
