@@ -1,101 +1,101 @@
-﻿Rank,Course,Latitude,Longitude,State,PrivPub
-1,Cape Wickham,-39.5957455,143.9341137,Tasmania,Public
-2,Royal Melbourne (West),-37.9693978,145.0302649,Victoria,Private
-3,Kingston Heath,-37.9541441,145.0862321,Victoria,Private
-4,Barnbougle (Dunes),-40.9581429,147.4294104,Tasmania,Public
-5,Peninsula Kingswood (North),-38.1315109,145.1573708,Victoria,Private
-6,New South Wales,-33.9910325,151.2403013,New South Wales,Private
-7,Barnbougle (Lost Farm),-40.9581429,147.4294104,Tasmania,Public
-8,Royal Melbourne (East),-37.9693978,145.0302649,Victoria,Private
-9,Royal Adelaide,-34.8961678,138.5102699,South Australia,Private
-10,Victoria,-37.9665348,145.0451461,Victoria,Private
-11,Metropolitan,-37.9119326,145.0901767,Victoria,Private
-12,The National (Moonah),-38.4600993,144.8818095,Victoria,Private
-13,Ocean Dunes,-39.8980041,143.8580107,Tasmania,Public
-14,Cathedral,-37.2424495,145.803893,Victoria,Private
-15,Peninsula Kingswood (South),-38.1315109,145.1573708,Victoria,Private
-16,The National (Gunnamatta),-38.4600993,144.8818095,Victoria,Private
-17,Lake Karrinyup,-31.86158,115.784233,Western Australia,Private
-18,Kooyonga,-34.9283614,138.5329691,South Australia,Private
-19,The National (Old),-38.4600993,144.8818095,Victoria,Private
-20,The Australian,-33.9181949,151.2121,New South Wales,Private
-21,Joondalup (Quarry/Dune),-31.7500522,115.7498583,Western Australia,Public
-22,The Lakes,-33.9335718,151.2122939,New South Wales,Private
-23,Barwon Heads,-38.2851028,144.4863722,Victoria,Public
-24,Woodlands,-37.9996125,145.0981948,Victoria,Private
-25,St Andrews Beach,-38.4197132,144.8514937,Victoria,Public
-26,The Dunes,-38.4033845,144.8265708,Victoria,Public
-27,Yarra Yarra,-37.9314697,145.0754897,Victoria,Private
-28,Royal Queensland,-27.4387658,153.0912593,Queensland,Private
-29,Royal Canberra (Westbourne),-35.3042348,149.0898141,Australian Captial Territory,Private
-30,Hamilton Island,-20.3566247,148.9337609,Queensland,Public
-31,Newcastle,-32.8696888,151.7944471,New South Wales,Public
-32,Glenelg,-34.9612565,138.5283498,South Australia,Private
-33,13th Beach (Beach),-38.2779045,144.4577459,Victoria,Public
-34,Bonville,-30.3629199,153.0398344,New South Wales,Private
-35,Magenta Shores,-33.3110773,151.5228404,New South Wales,Private
-36,Lonsdale Links,-38.2788337,144.6024063,Victoria,Public
-37,The Grand,-28.0161894,153.3067276,Queensland,Private
-38,The Cut,-32.6114995,115.6309799,Western Australia,Public
-39,Bonnie Doon,-33.9331868,151.2248992,New South Wales,Private
-40,Sanctuary Cove (Pines),-27.8640341,153.3624663,Queensland,Private
-41,Brookwater,-27.6625679,152.8941607,Queensland,Public
-42,Grange (West),-34.875634,138.489556,South Australia,Private
-43,Elanora,-33.6985397,151.2735967,New South Wales,Private
-44,Terrey Hills,-33.668149,151.1970053,New South Wales,Private
-45,Moonah Links (Legends),-38.4054838,144.8526463,Victoria,Public
-46,St Michaels,-33.984672,151.246492,New South Wales,Public
-47,Concord,-33.8521565,151.099101,New South Wales,Private
-48,Moonah Links (Open),-38.4055017,144.8526356,Victoria,Public
-49,Portsea,-38.3247516,144.703688,Victoria,Public
-50,Port Fairy,-38.3595306,142.2796002,Victoria,Public
-51,Links Hope Island,-27.8752043,153.3495604,Queensland,Public
-52,Grange (East),-34.875634,138.489556,South Australia,Private
-53,The Vintage,-32.73955,151.3246891,New South Wales,Public
-54,Spring Valley,-37.9532441,145.128499,Victoria,Private
-55,The Western Australian,-31.8959721,115.852163,Western Australia,Private
-56,Sorrento,-38.3291826,144.7350723,Victoria,Private
-57,Kalgoorlie,-30.7372906,121.4445294,Western Australia,Public
-58,Avondale,-33.7497053,151.1304724,New South Wales,Private
-59,Sandy Links,-37.966683,145.031612,Victoria,Public
-60,Bougle Run,-40.9581429,147.4294104,Tasmania,Public
-61,Links Lady Bay,-35.4620242,138.3154144,South Australia,Public
-62,Curlewis,-38.1820704,144.5346743,Victoria,Public
-63,Cottesloe,-31.9702016,115.7691659,Western Australia,Private
-64,13th Beach (Creek),-38.2779045,144.4577459,Victoria,Public
-65,Pelican Waters,-26.8369886,153.0904182,Queensland,Private
-66,Pacific Dunes,-32.7667536,151.8679827,New South Wales,Public
-67,Rosebud (North),-38.378629,144.8990981,Victoria,Public
-68,Meadow Springs,-32.4964893,115.7504719,Western Australia,Public
-69,Lakelands,-28.040031,153.3818379,Queensland,Public
-70,Glades,-28.0766057,153.3679692,Queensland,Public
-71,Mount Compass,-35.3574247,138.6084075,South Australia,Public
-72,RACV Cape Schanck,-38.4612704,144.8938992,Victoria,Public
-73,Killara,-33.7696886,151.1587512,New South Wales,Private
-74,Sanctuary Lakes,-37.8959876,144.7626273,Victoria,Public
-75,Black Bull,-36.0030927,146.0396893,Victoria,Public
-76,Sanctuary Cove (Palms),-27.8582576,153.3638074,Queensland,Private
-77,The Heritage (Henley),-37.7189655,145.2986078,Victoria,Private
-78,Brisbane,-27.5270925,153.0090115,Queensland,Private
-79,Settlers Run,-38.131782,145.2525793,Victoria,Private
-80,Palmer Coolum,-26.5527145,153.092121,Queensland,Public
-81,Stonecutters Ridge,-33.7225462,150.8646587,New South Wales,Public
-82,Mollymook (Hilltop),-35.3402222,150.4744336,New South Wales,Public
-83,Pacific Harbour,-27.0318214,153.1486646,Queensland,Public
-84,Narooma,-36.2187842,150.138685,New South Wales,Public
-85,The Heritage (St John),-37.7189655,145.2986078,Victoria,Private
-86,Castle Hill,-33.7252281,150.9631319,New South Wales,Private
-87,Twin Waters,-26.6285966,153.0852007,Queensland,Public
-88,Cypress Lakes,-32.7845699,151.2898053,New South Wales,Public
-89,Federal,-35.33161,149.1105131,Australian Captial Territory,Public
-90,Monash,-33.6881425,151.2614617,New South Wales,Private
-91,Secret Harbour,-32.4080153,115.7491613,Western Australia,Public
-92,Riversdale,-37.8714678,145.1142773,Victoria,Private
-93,Warrnambool,-38.3885339,142.4611817,Victoria,Public
-94,RACV Royal Pines (Green/Gold),-28.0044789,153.3764535,Queensland,Public
-95,Royal Fremantle,-32.0511784,115.7745307,Western Australia,Private
-96,Maroochy River,-26.6228276,153.0583891,Queensland,Public
-97,Foster Tuncurry (Tuncurry),-32.1880623,152.5325256,New South Wales,Public
-98,Murray Downs,-35.3483722,143.609507,New South Wales,Public
-99,Albany,-35.0069916,117.9254698,Western Australia,Public
-100,Noosa Springs,-26.4185751,153.0872083,Queensland,Public
+﻿Rank,Course,Latitude,Longitude,State,PrivPub,Shorthand
+1,Cape Wickham,-39.5957455,143.9341137,Tasmania,Public,TAS
+2,Royal Melbourne (West),-37.9693978,145.0302649,Victoria,Private,VIC
+3,Kingston Heath,-37.9541441,145.0862321,Victoria,Private,VIC
+4,Barnbougle (Dunes),-40.9581429,147.4294104,Tasmania,Public,TAS
+5,Peninsula Kingswood (North),-38.1315109,145.1573708,Victoria,Private,VIC
+6,New South Wales,-33.9910325,151.2403013,New South Wales,Private,NSW
+7,Barnbougle (Lost Farm),-40.9581429,147.4294104,Tasmania,Public,TAS
+8,Royal Melbourne (East),-37.9693978,145.0302649,Victoria,Private,VIC
+9,Royal Adelaide,-34.8961678,138.5102699,South Australia,Private,SA
+10,Victoria,-37.9665348,145.0451461,Victoria,Private,VIC
+11,Metropolitan,-37.9119326,145.0901767,Victoria,Private,VIC
+12,The National (Moonah),-38.4600993,144.8818095,Victoria,Private,VIC
+13,Ocean Dunes,-39.8980041,143.8580107,Tasmania,Public,TAS
+14,Cathedral,-37.2424495,145.803893,Victoria,Private,VIC
+15,Peninsula Kingswood (South),-38.1315109,145.1573708,Victoria,Private,VIC
+16,The National (Gunnamatta),-38.4600993,144.8818095,Victoria,Private,VIC
+17,Lake Karrinyup,-31.86158,115.784233,Western Australia,Private,WA
+18,Kooyonga,-34.9283614,138.5329691,South Australia,Private,SA
+19,The National (Old),-38.4600993,144.8818095,Victoria,Private,VIC
+20,The Australian,-33.9181949,151.2121,New South Wales,Private,NSW
+21,Joondalup (Quarry/Dune),-31.7500522,115.7498583,Western Australia,Public,WA
+22,The Lakes,-33.9335718,151.2122939,New South Wales,Private,NSW
+23,Barwon Heads,-38.2851028,144.4863722,Victoria,Public,VIC
+24,Woodlands,-37.9996125,145.0981948,Victoria,Private,VIC
+25,St Andrews Beach,-38.4197132,144.8514937,Victoria,Public,VIC
+26,The Dunes,-38.4033845,144.8265708,Victoria,Public,VIC
+27,Yarra Yarra,-37.9314697,145.0754897,Victoria,Private,VIC
+28,Royal Queensland,-27.4387658,153.0912593,Queensland,Private,QLD
+29,Royal Canberra (Westbourne),-35.3042348,149.0898141,Australian Captial Territory,Private,ACT
+30,Hamilton Island,-20.3566247,148.9337609,Queensland,Public,QLD
+31,Newcastle,-32.8696888,151.7944471,New South Wales,Public,NSW
+32,Glenelg,-34.9612565,138.5283498,South Australia,Private,SA
+33,13th Beach (Beach),-38.2779045,144.4577459,Victoria,Public,VIC
+34,Bonville,-30.3629199,153.0398344,New South Wales,Private,NSW
+35,Magenta Shores,-33.3110773,151.5228404,New South Wales,Private,NSW
+36,Lonsdale Links,-38.2788337,144.6024063,Victoria,Public,VIC
+37,The Grand,-28.0161894,153.3067276,Queensland,Private,QLD
+38,The Cut,-32.6114995,115.6309799,Western Australia,Public,WA
+39,Bonnie Doon,-33.9331868,151.2248992,New South Wales,Private,NSW
+40,Sanctuary Cove (Pines),-27.8640341,153.3624663,Queensland,Private,QLD
+41,Brookwater,-27.6625679,152.8941607,Queensland,Public,QLD
+42,Grange (West),-34.875634,138.489556,South Australia,Private,SA
+43,Elanora,-33.6985397,151.2735967,New South Wales,Private,NSW
+44,Terrey Hills,-33.668149,151.1970053,New South Wales,Private,NSW
+45,Moonah Links (Legends),-38.4054838,144.8526463,Victoria,Public,VIC
+46,St Michaels,-33.984672,151.246492,New South Wales,Public,NSW
+47,Concord,-33.8521565,151.099101,New South Wales,Private,NSW
+48,Moonah Links (Open),-38.4055017,144.8526356,Victoria,Public,VIC
+49,Portsea,-38.3247516,144.703688,Victoria,Public,VIC
+50,Port Fairy,-38.3595306,142.2796002,Victoria,Public,VIC
+51,Links Hope Island,-27.8752043,153.3495604,Queensland,Public,QLD
+52,Grange (East),-34.875634,138.489556,South Australia,Private,SA
+53,The Vintage,-32.73955,151.3246891,New South Wales,Public,NSW
+54,Spring Valley,-37.9532441,145.128499,Victoria,Private,VIC
+55,The Western Australian,-31.8959721,115.852163,Western Australia,Private,WA
+56,Sorrento,-38.3291826,144.7350723,Victoria,Private,VIC
+57,Kalgoorlie,-30.7372906,121.4445294,Western Australia,Public,WA
+58,Avondale,-33.7497053,151.1304724,New South Wales,Private,NSW
+59,Sandy Links,-37.966683,145.031612,Victoria,Public,VIC
+60,Bougle Run,-40.9581429,147.4294104,Tasmania,Public,TAS
+61,Links Lady Bay,-35.4620242,138.3154144,South Australia,Public,SA
+62,Curlewis,-38.1820704,144.5346743,Victoria,Public,VIC
+63,Cottesloe,-31.9702016,115.7691659,Western Australia,Private,WA
+64,13th Beach (Creek),-38.2779045,144.4577459,Victoria,Public,VIC
+65,Pelican Waters,-26.8369886,153.0904182,Queensland,Private,QLD
+66,Pacific Dunes,-32.7667536,151.8679827,New South Wales,Public,NSW
+67,Rosebud (North),-38.378629,144.8990981,Victoria,Public,VIC
+68,Meadow Springs,-32.4964893,115.7504719,Western Australia,Public,WA
+69,Lakelands,-28.040031,153.3818379,Queensland,Public,QLD
+70,Glades,-28.0766057,153.3679692,Queensland,Public,QLD
+71,Mount Compass,-35.3574247,138.6084075,South Australia,Public,SA
+72,RACV Cape Schanck,-38.4612704,144.8938992,Victoria,Public,VIC
+73,Killara,-33.7696886,151.1587512,New South Wales,Private,NSW
+74,Sanctuary Lakes,-37.8959876,144.7626273,Victoria,Public,VIC
+75,Black Bull,-36.0030927,146.0396893,Victoria,Public,VIC
+76,Sanctuary Cove (Palms),-27.8582576,153.3638074,Queensland,Private,QLD
+77,The Heritage (Henley),-37.7189655,145.2986078,Victoria,Private,VIC
+78,Brisbane,-27.5270925,153.0090115,Queensland,Private,QLD
+79,Settlers Run,-38.131782,145.2525793,Victoria,Private,VIC
+80,Palmer Coolum,-26.5527145,153.092121,Queensland,Public,QLD
+81,Stonecutters Ridge,-33.7225462,150.8646587,New South Wales,Public,NSW
+82,Mollymook (Hilltop),-35.3402222,150.4744336,New South Wales,Public,NSW
+83,Pacific Harbour,-27.0318214,153.1486646,Queensland,Public,QLD
+84,Narooma,-36.2187842,150.138685,New South Wales,Public,NSW
+85,The Heritage (St John),-37.7189655,145.2986078,Victoria,Private,VIC
+86,Castle Hill,-33.7252281,150.9631319,New South Wales,Private,NSW
+87,Twin Waters,-26.6285966,153.0852007,Queensland,Public,QLD
+88,Cypress Lakes,-32.7845699,151.2898053,New South Wales,Public,NSW
+89,Federal,-35.33161,149.1105131,Australian Captial Territory,Public,ACT
+90,Monash,-33.6881425,151.2614617,New South Wales,Private,NSW
+91,Secret Harbour,-32.4080153,115.7491613,Western Australia,Public,WA
+92,Riversdale,-37.8714678,145.1142773,Victoria,Private,VIC
+93,Warrnambool,-38.3885339,142.4611817,Victoria,Public,VIC
+94,RACV Royal Pines (Green/Gold),-28.0044789,153.3764535,Queensland,Public,QLD
+95,Royal Fremantle,-32.0511784,115.7745307,Western Australia,Private,WA
+96,Maroochy River,-26.6228276,153.0583891,Queensland,Public,QLD
+97,Foster Tuncurry (Tuncurry),-32.1880623,152.5325256,New South Wales,Public,NSW
+98,Murray Downs,-35.3483722,143.609507,New South Wales,Public,NSW
+99,Albany,-35.0069916,117.9254698,Western Australia,Public,WA
+100,Noosa Springs,-26.4185751,153.0872083,Queensland,Public,QLD
