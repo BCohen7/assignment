@@ -1,0 +1,28 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "height": "container",
+    "width": "container",
+    "data": {
+        "url": "https://raw.githubusercontent.com/BCohen7/assignment/main/assignment-two/data/stateslong.csv"},
+    "mark": "bar",
+    "params": [    {
+        "name": "XSelect",
+        "value": 100
+      }],
+    "transform": [
+            {
+                "filter": "datum.TopX == XSelect"
+            }
+        ],
+    "encoding": {
+        "x": {"field": "Amount", "type": "quantitative", "title": null, "axis": {"labels": false, "grid": false, "tickOpacity": 0, "domain": false}},
+        "y": {"field": "Shorthand", "type": "nominal","sort": "-x", "title": null,
+            "axis": {"tickOpacity": 0, "domain": false, "labelFontSize": 18, "labelFontStyle": "bold", "labelPadding": 24}},
+        "color": {
+            "field": "Origin", "type": "nominal",
+            "scale": {"range": ["#107937"]},
+            "legend": null
+        }
+    },
+    "config": {"background": "#ccecb5", "view": {"stroke": "transparent"}}    
+}

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <div>
+
+        <title>The 100 Best Golf Courses in Australia</title>
+        <!-- Import Vega & Vega-Lite -->
+        <script src="https://cdn.jsdelivr.net/npm/vega@5.20.2"></script>
+        <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.1.0"></script>
+        <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.17.0"></script>
+
+        <!-- Import pure.CCS-->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/purecss@3.0.0/build/pure-min.css" 
+        integrity="sha384-X38yfunGUhNzHpBaEBsWLO+A0HDYOQi8ufWDkZ0k9e0eXz/tH3II7uKZ9msv++Ls" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/purecss@3.0.0/build/grids-responsive-min.css" /> 
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        
+        <!-- Import Google Fonts-->
+        
+        <!-- CSS file-->
+        <link rel="stylesheet", type="text/css" href="css/styles.css" media="all">
+
+    </div>
+</head>
+
+
+<body>
+
+    <div class="titleblock">
+        <title>The 100 Top Golf Courses in Australia</title>
+    </div>
+
+    <div class="page">
+
+        <!-- pure grid group-->
+        <div class="pure-g">
+
+            <div class="pure-u-1-2">
+                <div id="vis1" class="vis-container"></div>
+            </div>
+
+            <div class="pure-u-1-2">
+                <div id="vis2" class="vis-container"></div>
+            </div>
+
+        </div>
+
+        <script type="text/javascript">
+
+            var specVis1 = "./symbolmap.json";
+
+            var specVis2 = "./barchart.json"
+
+            vegaEmbed('#vis1', specVis1, {"actions": false})
+                
+            vegaEmbed('#vis2', specVis2, {"actions": false}).then(function (result) {
+            }).catch(console.error)
+
+        </script>
+
+    </div>
+
+</body>
+
+</html>
