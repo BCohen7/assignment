@@ -1,0 +1,43 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "height": 400,
+    "width": 400,
+    "params": [{
+        "name": "XSelect",
+        "value": 25
+    }],
+    "data": {"url": "https://raw.githubusercontent.com/BCohen7/assignment/main/assignment-two/data/courses.csv"},
+    "layer": [{
+            "mark": {"type": "bar", "opacity": 1, "width": {"band": 0.8}, "cornerRadiusTopRight": 20, "cornerRadiusBottomRight": 20},
+            "transform": [{
+                        "filter": {
+                            "field": "Rank",
+                            "lte": {"expr": "XSelect"}
+                        }
+                    },
+                {
+                    "aggregate": [{
+                        "op": "count",
+                        "as": "myCount",
+                        "field": "Shorthand"
+                    }],
+                    "groupby": ["Shorthand"]
+                }],
+            "encoding": {
+                "y": {"field": "Shorthand", "type": "nominal","title": null, "axis": {"tickOpacity": 0, "domain": false, "labelFontSize": 18, "labelFontStyle": "bold", "labelPadding": 24}},
+                "x": {"field": "myCount", "type": "quantitative", "title": null, "axis": {"grid": false, "tickOpacity": 0, "domain": false}},
+                "color": {
+                "field": "TopX", "type": "nominal",
+                "scale": {"range": ["#107937"]},
+                "legend": null
+            }
+                }
+            },
+            {
+                "mark": {"type": "bar", "opacity": 0},
+                "encoding": {
+                    "y": {"field": "Shorthand", "title": null, "axis": {"tickOpacity": 0, "domain": false, "labelFontSize": 18, "labelFontStyle": "bold", "labelPadding": 24}}
+                }
+            }
+    ]
+}

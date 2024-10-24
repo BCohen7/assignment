@@ -93,7 +93,7 @@
         "color": {
           "field": "Amount",
           "type": "quantitative",
-          "scale": {"type": "linear", "domainMax":{"expr":"data('TopX')[0]"}, "scheme": "greens"},
+          "scale": {"type": "linear", "domainMax":{"expr":"data('TopX')[0]"}, "domainMin": -5, "scheme": "greens"},
           "legend": null
         },
         "tooltip": [

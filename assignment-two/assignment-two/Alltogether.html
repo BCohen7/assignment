@@ -1,0 +1,166 @@
+<script type = "text/javascript">
+
+var map = {
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "width": 800,
+    "height": 450,
+    "params":[
+      {
+        "name": "State_Select",
+        "bind": {
+          "input": "select",
+          "options": [
+            null,
+            "Victoria",
+            "New South Wales",
+            "Queensland",
+            "Western Australia",
+            "South Australia",
+            "Tasmania",
+            "Australian Capital Territory"
+          ],
+          "labels": [
+            "Show all",
+            "Victoria",
+            "New South Wales",
+            "Queensland",
+            "Western Australia",
+            "South Australia",
+            "Tasmania",
+            "Australian Capital Territory"
+          ],
+          "name": "State: "
+        }
+      },
+      {
+        "name": "X_Select",
+        "value": 100,
+        "bind": {
+          "input": "select",
+          "options": [
+            100,
+            100,
+            50,
+            25,
+            10
+          ],
+          "labels": [
+            "Show All",
+            "Top 100",
+            "Top 50",
+            "Top 25",
+            "Top 10"
+          ],
+          "name": "Range to view: "
+        }
+      },
+      {
+        "name": "highlight",
+        "select": {"type": "point", "on": "click", "encodings": ["States"]},
+      }
+    ],
+    "projection": {"type": "equirectangular"},
+    "layer": [
+      {
+        "data": {
+          "url":
+          "https://raw.githubusercontent.com/BCohen7/assignment/main/assignment-two/js/STE_2021_AUST_GDA94.topojson",
+          "format": {"type": "topojson", "feature": "STE_2021_AUST_GDA94"}
+        },
+        "mark": {
+          "type": "geoshape",
+          "fill": "#ccecb5",
+          "stroke": "white"
+        }
+      },
+      {"data": {
+        "url": "https://raw.githubusercontent.com/BCohen7/assignment/main/assignment-two/data/stateslong.csv"
+      },
+        "transform": [
+          {
+            "lookup": "States",
+            "from": {
+              "data": {
+                "url": "https://raw.githubusercontent.com/BCohen7/assignment/main/assignment-two/js/STE_2021_AUST_GDA94.topojson",
+                "format": {"type": "topojson", "feature": "STE_2021_AUST_GDA94"}
+              },
+              "key": "properties.STE_NAME21"
+          },
+          "as": "geo"
+        },
+        {
+          "filter": "datum.TopX == X_Select"
+        },
+        {
+          "calculate": "'Courses in the top' + datum.TopX[0]","as": "coursetip"
+        }
+        ],
+        "mark": {"type": "geoshape", "stroke": "white"},
+        "encoding": {
+          "shape": {"field": "geo", "type": "geojson"},
+          "color": {
+            "field": "Amount",
+            "type": "quantitative",
+            "scale": {"type": "linear", "domainMin": 0, "scheme": "greens"}
+          },
+          "tooltip": [
+            {"field": "States", "type": "nominal", "title": "State"},
+            {"field": "Amount", "type": "quantitative", "title": "Amount"}
+          ]
+        }
+      },
+      {
+      "data": {
+        "url": "https://raw.githubusercontent.com/BCohen7/assignment/main/assignment-two/data/courses.csv"},
+      "transform": [
+        {
+          "filter": "State_Select == null || datum.State == State_Select" 
+        },
+        {
+          "filter": "datum.Rank < X_Select + 1"
+        }
+      ],
+      "mark": {"type": "circle", "opacity": 0.5, "size": 1},
+      "encoding": {
+        "longitude": {"field": "Longitude", "type": "quantitative"},
+        "latitude": {"field": "Latitude", "type": "quantitative"},
+        "size": {"value": 40},
+        "color": {"value": "black"},
+        "tooltip": [{"field": "Course", "type": "nominal", "title": "Course"}, {"field": "Rank", "type": "quantitative"}]
+      }
+    }
+    ]
+  }
+
+var bar = {
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "data": {
+        "url": "https://raw.githubusercontent.com/BCohen7/assignment/main/assignment-two/data/stateslong.csv"},
+        "transform": [
+            {
+                "filter": "datum.TopX == 100"
+            }
+        ],
+        "mark": "bar",
+        "encoding": {
+            "x": {"field": "Amount", "type": "quantitative"},
+            "y": {"field": "States", "type": "nominal","sort": "-x"}
+        }
+}
+
+var specVis1 = "./symbolmap.json"
+var specVis2 = "./barchart.json"
+
+vegaEmbed('#vis1', specVis1, {"actions": false}).then(function (result) {
+    // access the vega view instance
+    var view = result.view;
+
+    // Watch out for a click with an event listener
+    view.addEventListener('click',function (event, item) {
+      var clickedState = item.tooltip[1];
+      pushFunction(clickedState)
+    })
+}).catch(console.error)
+
+vegaEmbed('#vis1', specVis1, {"actions": false}).then(function (result))
+</script>
