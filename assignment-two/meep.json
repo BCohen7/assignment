@@ -53,7 +53,7 @@
     ],
     "data": {
           "url":
-          "https://raw.githubusercontent.com/BCohen7/assignment/main/assignment-two/js/MapOfAustralia.topojson",
+          "https://raw.githubusercontent.com/BCohen7/assignment/tree/main/assignment-two/js/MapOfAustralia.topojson",
           "format": {"type": "topojson", "feature": "STE_2021_AUST_GDA94"}
         },
         "spacing": 50,
@@ -76,14 +76,14 @@
                   }
         },
         {"data": {
-            "url": "https://raw.githubusercontent.com/BCohen7/assignment/main/assignment-two/data/stateslong.csv"
+            "url": "https://raw.githubusercontent.com/BCohen7/assignment/tree/main/assignment-two/data/stateslong.csv"
           },
             "transform": [
               {
                 "lookup": "States",
                 "from": {
                   "data": {
-                    "url": "https://raw.githubusercontent.com/BCohen7/assignment/main/assignment-two/js/MapOfAustralia.topojson",
+                    "url": "https://raw.githubusercontent.com/BCohen7/assignment/tree/main/assignment-two/js/MapOfAustralia.topojson",
                     "format": {"type": "topojson", "feature": "STE_2021_AUST_GDA94"}
                   },
                   "key": "properties.STE_NAME21"
@@ -111,7 +111,7 @@
           },
           {
             "data": {
-              "url": "https://raw.githubusercontent.com/BCohen7/assignment/main/assignment-two/data/courses.csv"},
+              "url": "https://raw.githubusercontent.com/BCohen7/assignment/tree/main/assignment-two/data/courses.csv"},
             "transform": [
               {
                 "filter": "State_Select == null || datum.State == State_Select" 
@@ -133,7 +133,7 @@
     {
         "height": 400,
         "width": 500,
-        "data": {"url": "https://raw.githubusercontent.com/BCohen7/assignment/main/assignment-two/data/courses.csv"},
+        "data": {"url": "https://raw.githubusercontent.com/BCohen7/assignment/tree/main/assignment-two/data/courses.csv"},
         "layer": [
             {
                 "mark": {"type": "bar", "opacity": 1, "width": {"band": 0.8}, "cornerRadiusTopRight": 20, "cornerRadiusBottomRight": 20},
