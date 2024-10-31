@@ -133,7 +133,7 @@
     {
         "height": 400,
         "width": 500,
-        "data": {"url": "https://raw.githubusercontent.com/BCohen7/assignment/tree/main/assignment-two/data/courses.csv"},
+        "data": {"url": "https://raw.githubusercontent.com/BCohen7/assignment/refs/heads/main/assignment-two/data/courses.csv"},
         "layer": [
             {
                 "mark": {"type": "bar", "opacity": 1, "width": {"band": 0.8}, "cornerRadiusTopRight": 20, "cornerRadiusBottomRight": 20},
