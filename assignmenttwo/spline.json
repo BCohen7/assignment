@@ -1,0 +1,57 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "height": 400,
+    "width": "container",
+    "data": {"url": "https://raw.githubusercontent.com/BCohen7/assignment/main/assignmenttwo/data/courses.csv"},
+    "transform": [{
+        "calculate": "abs(0.5-(datum.Rank))", "as": "rankPlot"
+        }],
+    "layer": [
+        {
+            "transform": [{
+                "calculate": "datum.PrivPub == 'Public' ? -1 : 0", "as": "xmini"
+            }],
+            "mark": {"type": "bar", "binSpacing": 10, "cornerRadiusTopLeft": 20, "cornerRadiusBottomLeft": 20},
+            "encoding": {
+                "y": {"bin": true, "field": "rankPlot", "type": "quantitative", "sort": "descending", 
+                "title": null, "axis": {"tickOpacity": 0, "domain": false, "grid": true, "gridColor":"#107937", "labelFontSize": 12, "labelFontStyle": "bold", "labelPadding": 12, "values": [10, 20, 30, 40, 50, 60, 70, 80, 90, 100]}},
+                "x": {"aggregate": "sum", "field": "xmini", "scale": {"domain": [-10, 10]}, "title": null, "axis": {"labels": false, "grid": false, "tickOpacity": 0, "domain": false}},
+                "color": {
+                    "field": "PrivPub",
+                    "legend": null,
+                    "scale": {"range": ["#107937", "#a28947"]}
+                }
+            }
+        },
+        {
+            "transform": [{
+                "calculate": "datum.PrivPub == 'Private' ? 1 : 0", "as": "xmaxi" 
+            }],
+            "mark": {"type": "bar", "binSpacing": 10, "cornerRadiusTopRight": 20, "cornerRadiusBottomRight": 20},
+            "encoding": {
+                "y": {"bin": true, "field": "rankPlot", "type": "quantitative", "sort": "descending", "title": null, "axis": {"tickOpacity": 0, "domain": false, "labelFontSize": 12, "labelFontStyle": "bold", "labelPadding": 12}},
+                "x": {"aggregate": "sum", "field": "xmaxi", "scale": {"domain": [-10, 10]}},
+                "color": {
+                    "field": "PrivPub",
+                    "legend": null,
+                    "scale": {"range": ["#a28947"]}
+                }
+            }
+            },
+        {
+            "transform": [{
+                "calculate": "datum.PrivPub == 'Private' ? 1 : 0", "as": "xmaxi"
+            }],
+            "mark": {"type": "text", "align": "center", "dx": 10, "fontSize": 20, "fontWeight": "bold", "color": "#ccecb5"},
+            "encoding": {"text": {"aggregate": "sum", "field": "xmaxi"}, "x": {"bandPosition": 0, "type": "quantitative"}, "y": {"bin": true, "field": "rankPlot"}}
+        },
+        {
+            "transform": [{
+                "calculate": "datum.PrivPub == 'Public' ? 1 : 0", "as": "xmini"
+            }],
+            "mark": {"type": "text", "align": "center", "dx": -10, "fontSize": 20, "fontWeight": "bold", "color": "#ccecb5"},
+            "encoding": {"text": {"aggregate": "sum", "field": "xmini"}, "x": {"bandPosition": 0, "type": "quantitative"}, "y": {"bin": true, "field": "rankPlot"}}
+        }
+    ],
+    "config": {"background": "#ccecb5", "view": {"stroke": "transparent"}}
+}
