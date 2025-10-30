@@ -53,7 +53,7 @@
     ],
     "data": {
           "url":
-          "https://raw.githubusercontent.com/BCohen7/assignment/refs/heads/main/assignmenttwo/js/MapOfAustralia.json",
+          "https://raw.githubusercontent.com/BCohen7/Assignmenttwo2025/refs/heads/main/js/STE_2021_AUST_GDA94.json",
           "format": {"type": "topojson", "feature": "STE_2021_AUST_GDA94"}
         },
         "spacing": 50,
@@ -266,4 +266,5 @@
         }
     ],
 "config": {"background": "#ccecb5", "view": {"stroke": "transparent"}}
+
 }
