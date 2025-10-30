@@ -21,8 +21,7 @@
       },
       "key": "airport",
       "fields": ["latitude", "longitude"]
-          },
-          "as": ["origin_latitude", "origin_longitude"]
+          }
         },
         {
          "lookup": "Arriving",
@@ -37,8 +36,8 @@
         }
       ],
       "encoding": {
-        "longitude": {"field": "origin_longitude"},
-        "latitude": {"field": "origin_latitude"},
+        "longitude": {"field": "longitude"},
+        "latitude": {"field": "latitude"},
         "longitude2": {"field": "dest_longitude"},
         "latitude2": {"field": "dest_latitude"}
       }
@@ -62,9 +61,9 @@
         "name": "org",
         "select": {
           "type": "point",
-          "on": "pointerover",
-          "nearest": true,
-          "fields": ["airport"]
+          "on": "click",
+          "nearest": false,
+          "fields": ["Departing"]
         }
       }],
       "encoding": {
