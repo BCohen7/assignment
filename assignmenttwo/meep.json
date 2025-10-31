@@ -1,79 +1,269 @@
 {
-    "$schema": "https://vega.github.io/schema/vega-lite/v6.json",
-    "layer": [
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "params":[
       {
-        "mark": {"type": "geoshape", "fill": "lightgray", "stroke": "white", "strokeWidth": 0.5},
-        "data": {
-        "url": "https://raw.githubusercontent.com/BCohen7/Assignmenttwo2025/refs/heads/main/js/STE_2021_AUST_GDA94.json",
-        "format": {"type": "topojson", "feature": "STE_2021_AUST_GDA94"}
+        "name": "State_Select",
+        "bind": {
+          "input": "select",
+          "options": [
+            null,
+            "Victoria",
+            "New South Wales",
+            "Queensland",
+            "Western Australia",
+            "South Australia",
+            "Tasmania",
+            "Australian Capital Territory"
+          ],
+          "labels": [
+            "Show all",
+            "Victoria",
+            "New South Wales",
+            "Queensland",
+            "Western Australia",
+            "South Australia",
+            "Tasmania",
+            "Australian Capital Territory"
+          ],
+          "name": "State: "
         }
       },
-    {
-      "mark": {"type": "rule", "fill": "black", "opacity": 0.3, "strokeWidth": 0.3},
-          "data": {"url": "https://raw.githubusercontent.com/BCohen7/Assignmenttwo2025/refs/heads/main/data/timely.csv"},
-      "transform": [
-      {"filter": {"param": "org", "empty": false}},
       {
-        "lookup": "Departing",
-        "from": {
-          "data": {
-            "url": "https://raw.githubusercontent.com/BCohen7/Assignmenttwo2025/refs/heads/main/data/airportlocations.csv"
-      },
-      "key": "airport",
-      "fields": ["latitude", "longitude"]
-          }
+        "name": "XSelect",
+        "value": 100,
+        "bind": {
+          "input": "select",
+          "options": [
+            100,
+            100,
+            50,
+            25,
+            10
+          ],
+          "labels": [
+            "Show All",
+            "Top 100",
+            "Top 50",
+            "Top 25",
+            "Top 10"
+          ],
+          "name": "Range to view: "
+        }
+      }
+    ],
+    "data": {
+          "url":
+          "https://raw.githubusercontent.com/BCohen7/assignment/refs/heads/main/assignmenttwo/js/MapOfAustralia.json",
+          "format": {"type": "topojson", "feature": "STE_2021_AUST_GDA94"}
+        },
+        "spacing": 50,
+        "padding": 0,
+
+    "vconcat": [
+        {
+            "center": true,
+            "bounds": "full",
+    "hconcat": [{
+        "projection": {"type": "equirectangular"},
+        "title": {"text": "WHERE ARE THE BEST COURSES?", "align": "center","fontSize": 24, "color": "#107937"},
+        "height": 400,
+        "width": 400,
+        "layer": [
+            {
+                "mark": {
+                    "type": "geoshape",
+                    "fill": "#c0e6ba"
+                  }
+        },
+        {"data": {
+            "url": "https://raw.githubusercontent.com/BCohen7/assignment/refs/heads/main/assignmenttwo/data/stateslong.csv"
+          },
+            "transform": [
+              {
+                "lookup": "States",
+                "from": {
+                  "data": {
+                    "url": "https://raw.githubusercontent.com/BCohen7/assignment/refs/heads/main/assignmenttwo/js/MapOfAustralia.json",
+                    "format": {"type": "topojson", "feature": "STE_2021_AUST_GDA94"}
+                  },
+                  "key": "properties.STE_NAME21"
+              },
+              "as": "geo"
+            },
+            {
+              "filter": "datum.TopX == XSelect"
+            }
+            ],
+            "mark": {"type": "geoshape","stroke": "#ccecb5","strokeWidth": 0.5},
+            "encoding": {
+              "shape": {"field": "geo", "type": "geojson"},
+              "color": {
+                "field": "Amount",
+                "type": "quantitative",
+                "scale": {"type": "linear", "domainMax":{"expr":"data('TopX')[0]"}, "domainMin": -1, "scheme": "greens"},
+                "legend": null
+              },
+              "tooltip": [
+                {"field": "States", "type": "nominal", "title": "State"},
+                {"field": "Amount", "type": "quantitative", "title": "Amount"}
+              ]
+            }
+          },
+          {
+            "data": {
+              "url": "https://raw.githubusercontent.com/BCohen7/assignment/refs/heads/main/assignmenttwo/data/courses.csv"},
+            "transform": [
+              {
+                "filter": "State_Select == null || datum.State == State_Select" 
+              },
+              {
+                "filter": "datum.Rank < XSelect + 1"
+              }
+            ],
+            "mark": {"type": "circle", "opacity": 0.5, "size": 1},
+            "encoding": {
+              "longitude": {"field": "Longitude", "type": "quantitative"},
+              "latitude": {"field": "Latitude", "type": "quantitative"},
+              "size": {"value": 40},
+              "color": {"value": "black"},
+              "tooltip": [{"field": "Course", "type": "nominal", "title": "Course"}, {"field": "Rank", "type": "quantitative"}]
+            }
+          }]
+    },
+    {
+        "height": 400,
+        "width": 500,
+        "data": {"url": "https://raw.githubusercontent.com/BCohen7/assignment/refs/heads/main/assignmenttwo/data/courses.csv"},
+        "layer": [
+            {
+                "mark": {"type": "bar", "opacity": 1, "width": {"band": 0.8}, "cornerRadiusTopRight": 20, "cornerRadiusBottomRight": 20},
+                "title": {"text": "BY STATE:", "align": "left","fontSize": 24, "color": "#107937"},
+                "transform": [{
+                            "filter": {
+                                "field": "Rank",
+                                "lte": {"expr": "XSelect"}
+                            }
+                        },
+                    {
+                        "aggregate": [{
+                            "op": "count",
+                            "as": "myCount",
+                            "field": "Shorthand"
+                        }],
+                        "groupby": ["Shorthand"]
+                    }],
+                "encoding": {
+                    "y": {"field": "Shorthand", "type": "nominal","title": null, "axis": {"tickOpacity": 0, "domain": false, "labelFontSize": 18, "labelFontStyle": "bold", "labelPadding": 24}},
+                    "x": {"field": "myCount", "type": "quantitative", "title": null, "axis": {"labels": false, "grid": false, "tickOpacity": 0, "domain": false, "orient": "bottom"}},
+                    "color": {
+                    "field": "TopX", "type": "nominal",
+                    "scale": {"range": ["#107937"]},
+                    "legend": null
+                }
+                    }
+                },
+                {
+                        "mark": {"type": "text", "align": "right", "dx": -8, "fontSize": 20, "fontWeight": "bold", "color": "#ccecb5"},
+                        "transform": [{
+                            "filter": {
+                                "field": "Rank",
+                                "lte": {"expr": "XSelect"}
+                            }
+                        },
+                        {
+                            "aggregate": [{
+                                "op": "count",
+                                "as": "myCount",
+                                "field": "Shorthand"
+                            }],
+                        "groupby": ["Shorthand"]
+                    }],
+                        "encoding": {"text": {"field": "myCount"}, "x": {"field": "myCount", "type": "quantitative"}, "y": {"field": "Shorthand"}}
+                    },
+                {
+                    "mark": {"type": "bar", "opacity": 0},
+                    "encoding": {
+                        "y": {"field": "Shorthand", "title": null, "axis": {"tickOpacity": 0, "domain": false, "labelFontSize": 18, "labelFontStyle": "bold", "labelPadding": 24}}
+                    }
+                }
+        ]
+    }
+    ]
         },
         {
-         "lookup": "Arriving",
-        "from": {
-          "data": {
-            "url": "https://raw.githubusercontent.com/BCohen7/Assignmenttwo2025/refs/heads/main/data/airportlocations.csv"
-      },
-      "key": "airport",
-      "fields": ["latitude", "longitude"]
-          },
-          "as": ["dest_latitude", "dest_longitude"]
+    "height": 120,
+    "width": "container",
+    "title": {"text": "WHICH COURSES ARE PUBLIC AND WHICH ARE PRIVATE", "align": "center","fontSize": 24, "color": "#107937"},
+    "data": {
+        "url": "https://raw.githubusercontent.com/BCohen7/assignment/refs/heads/main/assignmenttwo/data/courses.csv"},
+    "transform": [{
+        "filter": {                
+            "field": "Rank",
+            "lte": {"expr": "XSelect"}
+            }
+        }    
+    ],
+    "layer": [{
+    "mark": {"type": "bar", "cornerRadius": 60},
+  
+    "encoding": {
+        "x": {
+            "aggregate": "count",
+            "type": "quantitative",
+            "scale": {"domainMax": {"expr": "XSelect"}},
+            "title": null, "axis": {"labels": false, "grid": false, "tickOpacity": 0, "domain": false}},
+        "y": {
+            "field": "course",
+            "type": "ordinal",
+            "title": null, "axis": {"labels": false, "grid": false, "tickOpacity": 0, "domain": false}},
+        "color": {
+            "field": "PrivPub",
+            "type": "nominal",
+            "legend": null,
+            "scale": {"range": ["#107937", "#a28947"]}
         }
-      ],
-      "encoding": {
-        "longitude": {"field": "longitude"},
-        "latitude": {"field": "latitude"},
-        "longitude2": {"field": "dest_longitude"},
-        "latitude2": {"field": "dest_latitude"}
-      }
-    },
-      { 
-        "mark": {"type": "circle", "opacity": 1},
-        "data": {
-          "url": "https://raw.githubusercontent.com/BCohen7/Assignmenttwo2025/refs/heads/main/data/timely.csv"
-      },
-      "transform": [
-        {
-          "lookup": "Departing",
-          "from": {
-            "data": {"url": "https://raw.githubusercontent.com/BCohen7/Assignmenttwo2025/refs/heads/main/data/airportlocations.csv"},
-            "key": "airport",
-            "fields": ["latitude", "longitude"]
-          }
-        }
-      ],
-        "params": [{
-        "name": "org",
-        "select": {
-          "type": "point",
-          "on": "click",
-          "nearest": false,
-          "fields": ["Departing"]
-        }
-      }],
-      "encoding": {
-        "longitude": {"field": "longitude"},
-        "latitude": {"field": "latitude"},
-        "size": {"value": 100}
-      }
     }
-  ],
-  "projection": {"type": "equirectangular"},
-  "width": 800,
-  "height": 450
+},
+{
+    "transform": [{
+        "aggregate": [{
+            "op": "count",
+            "as": "myCount",
+            "field": "PrivPub"
+        }],
+        "groupby": ["PrivPub"]
+    },
+{
+    "filter": "datum.PrivPub == 'Private' "
+}],
+    "mark": {"type": "text", "align": "center", "dx": -20, "fontSize": 20, "fontWeight": "bold", "color": "#ccecb5"},
+    "encoding": {
+        "x": {"field": "myCount", "type": "quantitative", "title": null, "axis": {"labels": false, "grid": false, "tickOpacity": 0, "domain": false}},
+        "text": {"field": "myCount"}
+    }
+},
+{
+    "transform": [{
+        "aggregate": [{
+            "op": "count",
+            "as": "myCount",
+            "field": "PrivPub"
+        }],
+        "groupby": ["PrivPub"]
+    },
+{
+    "filter": "datum.PrivPub == 'Public' "
+},
+{
+    "calculate": "XSelect - datum.myCount", "as": "xplot"
+}],
+    "mark": {"type": "text", "align": "center", "dx": 20, "fontSize": 20, "fontWeight": "bold", "color": "#ccecb5"},
+    "encoding": {
+        "x": {"field": "xplot", "type": "quantitative", "title": null, "axis": {"labels": false, "grid": false, "tickOpacity": 0, "domain": false}},
+        "text": {"field": "myCount"}
+    }
+}]
+        }
+    ],
+"config": {"background": "#ccecb5", "view": {"stroke": "transparent"}}
 }
